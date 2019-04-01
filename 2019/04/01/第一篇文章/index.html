@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="chsobin&#39;s blog">
 <meta property="og:description" content="常用 Git 命令清单每天使用 Git ，但是很多命令记不住。 一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://chsobin.github.io/2019/04/01/第一篇文章/第一篇文章/bg2015120901.png">
-<meta property="og:updated_time" content="2019-04-01T13:51:58.530Z">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/01/第一篇文章/bg2015120901.png">
+<meta property="og:updated_time" content="2019-04-01T13:58:54.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇文章">
 <meta name="twitter:description" content="常用 Git 命令清单每天使用 Git ，但是很多命令记不住。 一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。">
-<meta name="twitter:image" content="https://chsobin.github.io/2019/04/01/第一篇文章/第一篇文章/bg2015120901.png">
+<meta name="twitter:image" content="https://chsobin.github.io/2019/04/01/第一篇文章/bg2015120901.png">
   
     <link rel="alternative" href="/atom.xml" title="chsobin&#39;s blog" type="application/atom+xml">
   
@@ -182,12 +182,12 @@
         <h1 id="常用-Git-命令清单"><a href="#常用-Git-命令清单" class="headerlink" title="常用 Git 命令清单"></a>常用 Git 命令清单</h1><p>每天使用 Git ，但是很多命令记不住。</p>
 <p>一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。</p>
 <a id="more"></a>
-<p><img src="第一篇文章/bg2015120901.png" alt="git"></p>
-<h2 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在当前目录新建一个Git代码库</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init [project-name]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载一个项目和它的整个代码历史</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> [url]</span></span><br></pre></td></tr></table></figure>
+<p><img src="bg2015120901.png" alt="git"></p>
+<h2 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在当前目录新建一个Git代码库</span><br><span class="line"><span class="meta">$</span> git init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 新建一个目录，将其初始化为Git代码库</span><br><span class="line"><span class="meta">$</span> git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 下载一个项目和它的整个代码历史</span><br><span class="line"><span class="meta">$</span> git clone [url]</span><br></pre></td></tr></table></figure>
 <h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><blockquote>
 <p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。 </p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示当前的Git配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --list</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑Git配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config -e [--global]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置提交代码时的用户信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.name <span class="string">"[name]"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.email <span class="string">"[email address]"</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 显示当前的Git配置</span><br><span class="line"><span class="meta">$</span> git config --list</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 编辑Git配置文件</span><br><span class="line"><span class="meta">$</span> git config -e [--global]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 设置提交代码时的用户信息</span><br><span class="line"><span class="meta">$</span> git config [--global] user.name "[name]"</span><br><span class="line"><span class="meta">$</span> git config [--global] user.email "[email address]"</span><br></pre></td></tr></table></figure>
 
       
 
@@ -427,19 +427,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">备忘笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
             
             <div class="clearfix"></div>
