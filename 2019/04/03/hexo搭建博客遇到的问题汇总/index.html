@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="hexo">
-    <meta name="description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property &apos;lastIndex&apos; of undefined解决方法：1. 在 _config.yml 中设置 auto_detect: false2. 确保你的代码块有指定语言:​```java &amp;lt; **required**// code here​ 为了找到是哪一个post产生问">
+    <meta name="description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property ‘lastIndex’ of undefined解决方法：  在 _config.yml 中设置 auto_detect: false  确保你的代码块有指定语言: ​```java /*此处一定要指明语言*/ // code here​ ` 为了找到是哪一个post产生问题，">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建博客遇到的问题汇总">
 <meta property="og:url" content="https://chsobin.github.io/2019/04/03/hexo搭建博客遇到的问题汇总/index.html">
 <meta property="og:site_name" content="chsobin&#39;s blog">
-<meta property="og:description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property &apos;lastIndex&apos; of undefined解决方法：1. 在 _config.yml 中设置 auto_detect: false2. 确保你的代码块有指定语言:​```java &amp;lt; **required**// code here​ 为了找到是哪一个post产生问">
+<meta property="og:description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property ‘lastIndex’ of undefined解决方法：  在 _config.yml 中设置 auto_detect: false  确保你的代码块有指定语言: ​```java /*此处一定要指明语言*/ // code here​ ` 为了找到是哪一个post产生问题，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-03T02:25:05.116Z">
+<meta property="og:updated_time" content="2019-04-03T02:30:27.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客遇到的问题汇总">
-<meta name="twitter:description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property &apos;lastIndex&apos; of undefined解决方法：1. 在 _config.yml 中设置 auto_detect: false2. 确保你的代码块有指定语言:​```java &amp;lt; **required**// code here​ 为了找到是哪一个post产生问">
+<meta name="twitter:description" content="代码块必须指明语言，不然运行hexo g 命令会报错：  TypeError: Cannot set property ‘lastIndex’ of undefined解决方法：  在 _config.yml 中设置 auto_detect: false  确保你的代码块有指定语言: ​```java /*此处一定要指明语言*/ // code here​ ` 为了找到是哪一个post产生问题，">
     
         <link rel="alternate" type="application/atom+xml" title="chsobin&#39;s blog" href="/atom.xml">
     
@@ -126,7 +126,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -188,8 +188,16 @@
             <blockquote>
 <p>代码块必须指明语言，不然运行hexo g 命令会报错：</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">TypeError: Cannot set property 'lastIndex' of undefined</span><br><span class="line">解决方法：</span><br><span class="line">1. 在 _config.yml 中设置 auto_detect: false</span><br><span class="line">2. 确保你的代码块有指定语言:</span><br><span class="line">​```java &lt; **required**</span><br><span class="line">// code here</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-<p>为了找到是哪一个post产生问题，可以移除所有的post,一个个添加回去，然后运行”hexo g”,看是否会报错<br><code>`</code></p>
+<p>TypeError: Cannot set property ‘lastIndex’ of undefined<br>解决方法：</p>
+<ol>
+<li><p>在 _config.yml 中设置 auto_detect: false</p>
+</li>
+<li><p>确保你的代码块有指定语言:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">​```java /*此处一定要指明语言*/ </span><br><span class="line">// code here</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<p><code>`</code></p>
+<p>为了找到是哪一个post产生问题，可以移除所有的post,一个个添加回去，然后运行”hexo g”,看是否会报错</p>
+</li>
+</ol>
 <blockquote>
 <p>markdown 中的表格，开头不能有空格，不然会渲染失败</p>
 </blockquote>
@@ -203,7 +211,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-03T02:25:05.116Z" itemprop="dateUpdated">2019-04-03 10:25:05</time>
+    最終更新：<time datetime="2019-04-03T02:30:27.959Z" itemprop="dateUpdated">2019-04-03 10:30:27</time>
 </span><br>
 
 
@@ -368,7 +376,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
