@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/静态代理.png">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/线程五种状态.jpg">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3%E7%B1%BB.png">
-<meta property="og:updated_time" content="2019-04-03T01:46:51.179Z">
+<meta property="og:updated_time" content="2019-04-03T02:08:36.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java知识点总结">
 <meta name="twitter:description" content="前言 这篇文章是对Java相关知识点的简要总结，主要记录了我个人之前所忽略的知识点  对于每个工具类的使用，这里不做详细探讨，具体可以参照官方文档，https://docs.oracle.com/javase/8/docs/api/   入门基础 Java程序运行机制 编译和解释结合 *.java 源文件   编译成  *.class 字节码文件jvm解释执行字节码文件  面试题：Java是解释执">
@@ -257,8 +257,50 @@
 <p>​      3.“≥”： 访问权限，子类大于等于父类。</p>
 </li>
 <li><p><strong>访问权限修饰符 </strong></p>
-<p>| 修饰符    | 同一个类 | 同一个包 | 子类 | 所有类 |<br>| ——— | ——– | ——– | —- | —— |<br>| private   | <em>        |          |      |        |<br>| default   | </em>        | <em>        |      |        |<br>| protected | </em>        | <em>        | </em>    |        |<br>| public    | <em>        | </em>        | <em>    | </em>      |</p>
 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>同一个类</th>
+<th>同一个包</th>
+<th>子类</th>
+<th>所有类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>不可访问</td>
+<td>不可访问</td>
+<td>不可访问</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Y</td>
+<td>Y</td>
+<td>不可访问</td>
+<td>不可访问</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>不可访问</td>
+</tr>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p><strong>抽象类</strong></p>
 <p>有抽象方法的类，abstract关键字修饰</p>
 </li>
@@ -526,7 +568,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-03T01:46:51.179Z" itemprop="dateUpdated">2019-04-03 09:46:51</time>
+    Last updated: <time datetime="2019-04-03T02:08:36.275Z" itemprop="dateUpdated">2019-04-03 10:08:36</time>
 </span><br>
 
 
@@ -610,9 +652,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/04/03/hexo表格渲染/" id="post-prev" class="post-nav-link">
+      <a href="/2019/04/03/hexo搭建博客遇到的问题汇总/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">hexo表格渲染</h4>
+        <h4 class="title">hexo搭建博客遇到的问题汇总</h4>
       </a>
     </div>
   

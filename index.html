@@ -159,13 +159,13 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-hexo表格渲染" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-hexo搭建博客遇到的问题汇总" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2019-04-03 09:31:11" datetime="2019-04-03T01:31:11.000Z" itemprop="datePublished">2019-04-03</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/blog-测试/">blog 测试</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/hexo/">hexo</a></li></ul>
 
 
 
@@ -176,7 +176,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/04/03/hexo表格渲染/">hexo表格渲染</a>
+      <a class="post-title-link" href="/2019/04/03/hexo搭建博客遇到的问题汇总/">hexo搭建博客遇到的问题汇总</a>
     </h3>
   
 
@@ -186,36 +186,14 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        渲染结果如下：
+        
+代码块必须指明语言，不然运行hexo g 命令会报错：
 
-
-
-参数
-描述
-
-
-
-
-width
-设置layout viewport  的宽度，为一个正整数，或字符串”width-device”
-
-
-initial-scale
-设置页面的初始缩放值，为一个数字，可以带小数
-
-
-minimum-scale
-允许用户的最小缩放值，为一个数字，可以带小数
-
-
-maximum-scale
-允许用户的最大缩放值，为一个数字，可以带小数
-
-
-he...
+TypeError: Cannot set property 'lastIndex' of undefined解决方法：1. 在 _config.yml 中设置 auto_detect: false2. 确保你的代码块有指定语言:​```java &lt; **required**// code here​
+为了找到是哪一个post...
     
 
-        <a href="/2019/04/03/hexo表格渲染/" class="post-more waves-effect waves-button">
+        <a href="/2019/04/03/hexo搭建博客遇到的问题汇总/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
