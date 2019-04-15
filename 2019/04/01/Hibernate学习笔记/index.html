@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://chsobin.github.io/2019/04/01/Hibernate学习笔记/log4j.png">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/01/Hibernate学习笔记/Hiberbate持久化类三种状态转换图.gif">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/01/Hibernate学习笔记/hibernate_cache.jpg">
-<meta property="og:updated_time" content="2019-04-01T18:28:57.053Z">
+<meta property="og:updated_time" content="2019-04-15T11:33:54.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate学习笔记">
 <meta name="twitter:description" content="是什么 Hibernate是一种ORM(Object Relational Mapping ）框架 它对JDBC进行了非常轻量级的对象封装  hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库">
@@ -439,9 +439,44 @@
 <li>串行读(Serializable)：完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞</li>
 </ul>
 </li>
-<li><h3 id="隔离级别与并发问题"><a href="#隔离级别与并发问题" class="headerlink" title="隔离级别与并发问题"></a>隔离级别与并发问题</h3><p>| 隔离级别                     | 脏读     | 不可重复读 | 幻读     |<br>| —————————- | ——– | ———- | ——– |<br>| SERIALIZABLE （串行化）      | 不会发生 | 不会发生   | 不会发生 |<br>| REPEATABLE READ（可重复读）  | 不会发生 | 不会发生   | 可能发生 |<br>| READ COMMITTED （读已提交）  | 不会发生 | 可能发生   | 可能发生 |<br>| READ UNCOMMITTED（读未提交） | 可能发生 | 可能发生   | 可能发生 |</p>
-</li>
+<li><h3 id="隔离级别与并发问题"><a href="#隔离级别与并发问题" class="headerlink" title="隔离级别与并发问题"></a>隔离级别与并发问题</h3></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SERIALIZABLE （串行化）</td>
+<td>不会发生</td>
+<td>不会发生</td>
+<td>不会发生</td>
+</tr>
+<tr>
+<td>REPEATABLE READ（可重复读）</td>
+<td>不会发生</td>
+<td>不会发生</td>
+<td>可能发生</td>
+</tr>
+<tr>
+<td>READ COMMITTED （读已提交）</td>
+<td>不会发生</td>
+<td>可能发生</td>
+<td>可能发生</td>
+</tr>
+<tr>
+<td>READ UNCOMMITTED（读未提交）</td>
+<td>可能发生</td>
+<td>可能发生</td>
+<td>可能发生</td>
+</tr>
+</tbody>
+</table>
 <h2 id="Hibernate-一对多关系"><a href="#Hibernate-一对多关系" class="headerlink" title="Hibernate 一对多关系"></a>Hibernate 一对多关系</h2><p>以一个例子来说明：</p>
 <p>两个实体类：一个客户可以有多个联系人</p>
 <ul>
@@ -557,7 +592,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-01T18:28:57.053Z" itemprop="dateUpdated">2019-04-02 02:28:57</time>
+    Last updated: <time datetime="2019-04-15T11:33:54.845Z" itemprop="dateUpdated">2019-04-15 19:33:54</time>
 </span><br>
 
 
