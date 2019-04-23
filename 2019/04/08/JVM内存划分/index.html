@@ -238,14 +238,14 @@
 </li>
 </ul>
 <p>如何设置大小？</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> 设置一个线程的栈大小</span><br><span class="line">java -Xss128K Class文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置一个线程的栈大小</span></span><br><span class="line">java -Xss128K Class文件</span><br></pre></td></tr></table></figure>
 <p>该区域可能抛出以下异常：</p>
 <ul>
 <li>当线程请求的栈深度超过最大值，会抛出 StackOverflowError 异常；</li>
 <li>栈进行动态扩展时如果无法申请到足够内存，会抛出 OutOfMemoryError 异常。</li>
 </ul>
 <h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>所有对象都在这里分配内存，是垃圾收集的主要区域（”GC 堆”）。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> 可以通过 -Xms 和 -Xmx 这两个虚拟机参数来指定一个程序的堆内存大小，第一个参数设置初始值，第二个参数设置最大值。</span><br><span class="line">java -Xms1M -Xmx2M HackTheJava</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 可以通过 -Xms 和 -Xmx 这两个虚拟机参数来指定一个程序的堆内存大小，第一个参数设置初始值，第二个参数设置最大值。</span></span><br><span class="line">java -Xms1M -Xmx2M HackTheJava</span><br></pre></td></tr></table></figure>
 <p>注意：</p>
 <ul>
 <li><p>永久代是HotSpot对方法区的实现</p>
