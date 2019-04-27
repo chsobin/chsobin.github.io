@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>maven使用 | chsobin&#39;s blog | coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="maven">
+    <meta name="description" content="安装 下载安装包  配置环境变量MAVEN_HOME  修改系统环境变量PATH，加入%MAVEN_HOME%/bin;  注意：由于maven是使用Java开发的，因此其运行需要jre，因此必须安装jdk，然后配置环境变量JAVA_HOME  测试：在cmd中输入mvn -v查看maven版本  Maven工程目录">
+<meta name="keywords" content="maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven使用">
+<meta property="og:url" content="https://chsobin.github.io/2019/04/27/maven使用/index.html">
+<meta property="og:site_name" content="chsobin&#39;s blog">
+<meta property="og:description" content="安装 下载安装包  配置环境变量MAVEN_HOME  修改系统环境变量PATH，加入%MAVEN_HOME%/bin;  注意：由于maven是使用Java开发的，因此其运行需要jre，因此必须安装jdk，然后配置环境变量JAVA_HOME  测试：在cmd中输入mvn -v查看maven版本  Maven工程目录">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/27/maven使用/maven工程目录.png">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/27/maven使用/添加插件.png">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/27/maven使用/查找插件.png">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/27/maven使用/maven-tomcat插件.png">
+<meta property="og:image" content="https://chsobin.github.io/2019/04/27/maven使用/运行命令.png">
+<meta property="og:updated_time" content="2019-04-27T05:14:18.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="maven使用">
+<meta name="twitter:description" content="安装 下载安装包  配置环境变量MAVEN_HOME  修改系统环境变量PATH，加入%MAVEN_HOME%/bin;  注意：由于maven是使用Java开发的，因此其运行需要jre，因此必须安装jdk，然后配置环境变量JAVA_HOME  测试：在cmd中输入mvn -v查看maven版本  Maven工程目录">
+<meta name="twitter:image" content="https://chsobin.github.io/2019/04/27/maven使用/maven工程目录.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="chsobin&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">陈松彬</h5>
+          <a href="mailto:1748681439@qq.com" title="1748681439@qq.com" class="mail">1748681439@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/chsobin/" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.cnblogs.com/chsobin/">
+                <i class="icon icon-lg icon-link"></i>
+                我的博客园
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">maven使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">maven使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-27T05:12:56.000Z" itemprop="datePublished" class="page-time">
+  2019-04-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Maven工程目录"><span class="post-toc-number">2.</span> <span class="post-toc-text">Maven工程目录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#maven命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">maven命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改JDK版本"><span class="post-toc-number">4.</span> <span class="post-toc-text">修改JDK版本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#依赖的作用范围"><span class="post-toc-number">5.</span> <span class="post-toc-text">依赖的作用范围</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用Maven-tomcat-插件运行项目"><span class="post-toc-number">6.</span> <span class="post-toc-text">使用Maven tomcat 插件运行项目</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-maven使用" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">maven使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-27 13:12:56" datetime="2019-04-27T05:12:56.000Z" itemprop="datePublished">2019-04-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ol>
+<li><p>下载安装包</p>
+</li>
+<li><p>配置环境变量MAVEN_HOME</p>
+</li>
+<li>修改系统环境变量PATH，加入%MAVEN_HOME%/bin;</li>
+</ol>
+<p><em>注意：由于maven是使用Java开发的，因此其运行需要jre，因此必须安装jdk，然后配置环境变量JAVA_HOME</em></p>
+<ol start="4">
+<li>测试：在cmd中输入mvn -v查看maven版本</li>
+</ol>
+<h1 id="Maven工程目录"><a href="#Maven工程目录" class="headerlink" title="Maven工程目录"></a>Maven工程目录</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="maven工程目录.png" alt="maven工程目录" title>
+                </div>
+                <div class="image-caption">maven工程目录</div>
+            </figure>
+<ul>
+<li>src/main/java  项目源代码</li>
+<li>src/main/resources 项目资源文件，比如Spring配置文件</li>
+<li>src/main/webapp   web项目必备</li>
+</ul>
+<h1 id="maven命令"><a href="#maven命令" class="headerlink" title="maven命令"></a>maven命令</h1><ul>
+<li>mvn compile 编译src/main中的源文件，输出到target目录下</li>
+<li>mvn clean 清除target目录</li>
+<li>mvn test 编译src/main中的源文件，编译src/test中的测试类并运行单元测试</li>
+<li>mvn pakage 将项目打包</li>
+<li>mvn install 将项目打包并发布到本地仓库</li>
+</ul>
+<h1 id="修改JDK版本"><a href="#修改JDK版本" class="headerlink" title="修改JDK版本"></a>修改JDK版本</h1><p>新建maven项目后默认是jre1.5</p>
+<p>解决办法：</p>
+<ol>
+<li><p>添加插件，修改pom.xml</p>
+<ul>
+<li>步骤1</li>
+</ul>
+<p><img src="添加插件.png" alt="添加插件"></p>
+<ul>
+<li>步骤2</li>
+</ul>
+<p><img src="查找插件.png" alt="查找插件"></p>
+<ul>
+<li>步骤三，在pom.xml中添加jdk版本信息</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 源码版本 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 编译目标版本 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定编码 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>utf-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置完之后可能工程还是jre1.5，这时只需要maven update一下即可</p>
+</li>
+</ol>
+<h1 id="依赖的作用范围"><a href="#依赖的作用范围" class="headerlink" title="依赖的作用范围"></a>依赖的作用范围</h1><p>通过<scope></scope>标签配置</p>
+<p>eg:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet.jsp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jsp-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>取值：</p>
+<ul>
+<li><p>compile  依赖会用在编译，测试，运行</p>
+</li>
+<li><p>provided 依赖只有在当JDK或者一个容器已经提供该依赖时使用。provided依赖在编译和测试时需要，在运行时不需要，比如servlet api ，tomcat容器已经提供该jar包</p>
+</li>
+<li><p>runtime 依赖在运行和测试系统时候需要，但在编译的时候不需要。比如：jdbc的驱动包</p>
+</li>
+<li><p>test 依赖在编译和运行的时候都不需要，只有在测试编译和测试运行阶段可用，比如junit</p>
+</li>
+</ul>
+<h1 id="使用Maven-tomcat-插件运行项目"><a href="#使用Maven-tomcat-插件运行项目" class="headerlink" title="使用Maven tomcat 插件运行项目"></a>使用Maven tomcat 插件运行项目</h1><blockquote>
+<p><strong>配置插件</strong></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">path</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uriEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">uriEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>右键点击项目</strong></p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="maven-tomcat插件.png" alt="maven-tomcat插件" title>
+                </div>
+                <div class="image-caption">maven-tomcat插件</div>
+            </figure>
+<blockquote>
+<p><strong>运行命令</strong></p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="运行命令.png" alt="运行命令" title>
+                </div>
+                <div class="image-caption">运行命令</div>
+            </figure>
+<p>参考：<a href="http://my.oschina.net/lilw/blog/168667" target="_blank" rel="noopener">http://my.oschina.net/lilw/blog/168667</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-04-27T05:14:18.881Z" itemprop="dateUpdated">2019-04-27 13:14:18</time>
+</span><br>
+
+
+        
+        <a href="/2019/04/27/maven使用/" target="_blank" rel="external">https://chsobin.github.io/2019/04/27/maven使用/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://chsobin.github.io">
+            <img src="/img/avatar.jpg" alt="陈松彬">
+            陈松彬
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://chsobin.github.io/2019/04/27/maven使用/&title=《maven使用》 — chsobin's blog&pic=https://chsobin.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chsobin.github.io/2019/04/27/maven使用/&title=《maven使用》 — chsobin's blog&source=热衷技术" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://chsobin.github.io/2019/04/27/maven使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《maven使用》 — chsobin's blog&url=https://chsobin.github.io/2019/04/27/maven使用/&via=https://chsobin.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://chsobin.github.io/2019/04/27/maven使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/23/SpringMVC学习笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SpringMVC学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "4gAJbdS1jfOBi49zvrsx4JTn-gzGzoHsz",
+            appKey: "vsb7n2mW1ElKYMmtl1NG6DHB",
+            avatar: "mm",
+            placeholder: "please input your comment here(如果希望他人回复你的评论时收到邮件提醒，请在上方填上你的邮箱)",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>陈松彬 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://chsobin.github.io/2019/04/27/maven使用/&title=《maven使用》 — chsobin's blog&pic=https://chsobin.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chsobin.github.io/2019/04/27/maven使用/&title=《maven使用》 — chsobin's blog&source=热衷技术" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://chsobin.github.io/2019/04/27/maven使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《maven使用》 — chsobin's blog&url=https://chsobin.github.io/2019/04/27/maven使用/&via=https://chsobin.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://chsobin.github.io/2019/04/27/maven使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aQW7DMAwF0dz/0u42QBt5PmmnMDVaBa4b6akAK1J8vfA43sb7k/VPfz8n3/np/QuGDBkyHss4lmP9Dln0Gk8+r2eXIUPGPoxPESwNr2SDavOerFmGDBkywoCYHhk7VBkyZMggQXCddnLkvwVcGTJkPIRRO8bFqWbj0HlZLi5DhowHMnjV/fufb7nfkCFDxqMYRzh4wpku62gMGTJkzGZcO03aMBEkqKBRQ4YMGVMZpNSVLjFNNdMC3B9PZMiQsQGjfxzkZbW07QwV5mTIkLEN474Ayr8t3SAZMmTswEgPfGRxaMpSS8fJOzJkyBjK4OkieU5aNGrh+4QnQ4aM0Qy+9LSRq7Wg0kpkyJAxm8EDa63lgj8hae3JcVOGDBlDGbVy/x2NX7wVA/0dZMiQMYiRNm9xZK2Qx0kyZMjYgdEJqZ3ENU2bUbOFDBkyRjP4L/Mlpq1m6X8JGTJk7MNIy/HptWVKTbdPhgwZezLIxUDaMFG7JODXDzJkyNiBwZvD0gIZT1nTS9OgZ0SGDBmDGLUF1Q6IvGwXJNgyZMjYgMEn6Jf1O/erH7dVhgwZQxlHONLjI2mz4CH+pLgmQ4aMoYxamOu3i3US5uAKU4YMGYMYvDGif7mYbkew3zJkyNiAkSaxtXax9cZ1VitDhgwZJB1NWzd4KntLwJUhQ8Y2jJRKgjgv5LXuN2TIkPFABklia6W02iVB3MAhQ4aM0YzaueuqwhyZ8bJLTRkyZDyP8QMAIWqYgosYbAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
