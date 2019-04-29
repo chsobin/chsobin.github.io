@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/静态代理.png">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/线程五种状态.jpg">
 <meta property="og:image" content="https://chsobin.github.io/2019/04/02/Java知识点总结/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3%E7%B1%BB.png">
-<meta property="og:updated_time" content="2019-04-03T02:08:36.275Z">
+<meta property="og:updated_time" content="2019-04-29T00:59:14.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java知识点总结">
 <meta name="twitter:description" content="前言 这篇文章是对Java相关知识点的简要总结，主要记录了我个人之前所忽略的知识点  对于每个工具类的使用，这里不做详细探讨，具体可以参照官方文档，https://docs.oracle.com/javase/8/docs/api/   入门基础 Java程序运行机制 编译和解释结合 *.java 源文件   编译成  *.class 字节码文件jvm解释执行字节码文件  面试题：Java是解释执">
@@ -434,9 +434,9 @@
 </li>
 <li><p>阻塞状态(Blocked)  : 阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：   </p>
 <p>（1） 等待阻塞 – 通过调用线程的wait()方法，让线程等待某工作的完成。    </p>
-<p>（2） 同步阻塞 – 线程在获取synchronized同步锁失败(因为锁被其它线程所占用)，它会进入同步阻塞状态。     </p>
-<pre><code>（3）其他阻塞 -- 通过调用线程的sleep()或join()或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。 
-</code></pre></li>
+<p>（2） 同步阻塞 – 线程在获取synchronized同步锁失败(因为锁被其它线程所占用)，它会进入同步阻塞状态。</p>
+<p>（3）其他阻塞 – 通过调用线程的sleep()或join()或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。 </p>
+</li>
 <li><p>死亡状态(Dead)    : 线程执行完了或者因异常退出了run()方法，该线程结束生命周期。 </p>
 </li>
 </ol>
@@ -524,6 +524,7 @@
 </li>
 <li><p>枚举实质上还是类，而每个被枚举的成员实质就是一个枚举类型的实例，他们默认都是public static final修饰的。可以直接通过枚举类型名使用它们。 </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**季节*/</span></span><br><span class="line"><span class="keyword">enum</span> Season &#123;</span><br><span class="line">    SPRING, SUMMER, AUTUMN, WINDTER</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**星期*/</span></span><br><span class="line"><span class="keyword">enum</span> Week &#123;</span><br><span class="line">    星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期日</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>想要深入理解枚举实现得原理可以参考<a href="https://blog.csdn.net/javazejian/article/details/71333103" target="_blank" rel="noopener">https://blog.csdn.net/javazejian/article/details/71333103</a></p>
 </li>
 </ul>
 <h1 id="如何去学习框架"><a href="#如何去学习框架" class="headerlink" title="如何去学习框架"></a>如何去学习框架</h1><ul>
@@ -568,7 +569,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-03T02:08:36.275Z" itemprop="dateUpdated">2019-04-03 10:08:36</time>
+    Last updated: <time datetime="2019-04-29T00:59:14.515Z" itemprop="dateUpdated">2019-04-29 08:59:14</time>
 </span><br>
 
 
