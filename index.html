@@ -159,6 +159,191 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-MySQL整体介绍" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-06-01 10:00:22" datetime="2019-06-01T02:00:22.000Z" itemprop="datePublished">2019-06-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/06/01/MySQL整体介绍/">MySQL整体介绍</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        MySQL配置文件
+二进制日志文件 log-bin
+用于主从复制
+
+错误日志 log-err
+默认关闭，记录严重的警告和错误信息，每次启动和关闭的详细信息
+
+查询日志
+慢查询日志
+
+数据文件
+
+
+
+frm文件 存放表结构
+myd文件  存放表数据
+myi文件 存放表索引
+
+MySQL架构
+连接层：为请求做连接处理，授权认证，安全等
+服务层：主要提供，查询解析、分析、优化、缓存以及内置函数，跨...
+    
+
+        <a href="/2019/06/01/MySQL整体介绍/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-MySQL索引" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-06-01 10:00:21" datetime="2019-06-01T02:00:21.000Z" itemprop="datePublished">2019-06-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/06/01/MySQL索引/">MySQL索引</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        参考资料：
+
+官方explain文档：
+
+https://dev.mysql.com/doc/refman/5.7/en/explain-output.html
+
+mysql explain详解
+
+https://cloud.tencent.com/developer/article/1093229
+索引简介
+为了加快查询而创建的数据结构，通过对数据进行排序而加快查询
+
+底层实现一般是B+树...
+    
+
+        <a href="/2019/06/01/MySQL索引/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-MySQL优化之-慢查询日志" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-06-01 10:00:21" datetime="2019-06-01T02:00:21.000Z" itemprop="datePublished">2019-06-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/06/01/MySQL优化之-慢查询日志/">MySQL优化之-慢查询日志</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言
+开启慢查询日志，可以让MySQL记录下查询超过指定时间的语句，通过定位分析性能的瓶颈，才能更好的优化数据库系统的性能。
+
+只有需要调优的时候才开启，开启改功能会影响数据库性能
+
+
+
+环境
+ubuntu 16.04
+MySQL版本为5.7
+参考资料：
+
+官方文档：https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html
+
+
+开...
+    
+
+        <a href="/2019/06/01/MySQL优化之-慢查询日志/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-maven使用" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -561,107 +746,15 @@ Java程序运行机制
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-代码块缩进问题" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-04-02 02:28:30" datetime="2019-04-01T18:28:30.000Z" itemprop="datePublished">2019-04-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/问题集/">问题集</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/04/02/代码块缩进问题/">测试代码块缩进问题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        问题：使用Typora写文章时，发现从eclipse粘贴过来的代码经过hexo转化之后，缩进出现了错误
-如下：明明是四个空格，却显示了8个
-public class Demo &#123;	@Test	public void demo() &#123;		Session session = HibernateUtil.openSession();		Transaction tx = sess...
-    
-
-        <a href="/2019/04/02/代码块缩进问题/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Hibernate学习笔记" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-04-01 23:52:36" datetime="2019-04-01T15:52:36.000Z" itemprop="datePublished">2019-04-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/04/01/Hibernate学习笔记/">Hibernate学习笔记</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        是什么
-Hibernate是一种ORM(Object Relational Mapping ）框架
-它对JDBC进行了非常轻量级的对象封装 
-hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库 
-
-    
-
-        <a href="/2019/04/01/Hibernate学习笔记/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 
